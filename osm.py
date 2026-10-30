@@ -10,7 +10,7 @@ import urllib.request
 
 URLS = ('https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter', 'https://overpass.nchc.org.tw/api/interpreter')
 BOUNDS = (48.253, 25.860, 48.331, 26.012)
-QUERY = '[out:json][timeout:20];(nwr["name"]["wheelchair"](48.253,25.860,48.331,26.012);nwr["name"]["ramp"](48.253,25.860,48.331,26.012);nwr["name"]["amenity"~"^(pharmacy|hospital|clinic|doctors|townhall|community_centre|social_facility|library|school|university|cafe|restaurant)$"](48.253,25.860,48.331,26.012);nwr["name"]["shop"](48.253,25.860,48.331,26.012);nwr["name"]["office"](48.253,25.860,48.331,26.012);nwr["name"]["highway"="bus_stop"](48.253,25.860,48.331,26.012););out center tags;'
+QUERY = '[out:json][timeout:20];(nwr["name"]["wheelchair"](48.253,25.860,48.331,26.012);nwr["name"]["ramp"](48.253,25.860,48.331,26.012);nwr["name"]["amenity"~"^(pharmacy|hospital|clinic|doctors|dentist|townhall|post_office|police|community_centre|social_facility|library|school|university|college|cafe|restaurant|fast_food|food_court|pub|bar|bank|atm|cinema|theatre|toilets)$"](48.253,25.860,48.331,26.012);nwr["name"]["shop"](48.253,25.860,48.331,26.012);nwr["name"]["office"](48.253,25.860,48.331,26.012);nwr["name"]["tourism"~"^(hotel|hostel|guest_house|museum|attraction)$"](48.253,25.860,48.331,26.012);nwr["name"]["leisure"~"^(park|playground|garden|sports_centre)$"](48.253,25.860,48.331,26.012);nwr["name"]["public_transport"="platform"](48.253,25.860,48.331,26.012);nwr["name"]["highway"="bus_stop"](48.253,25.860,48.331,26.012););out center tags;'
 MAX_BYTES = 4_000_000
 TTL = 4 * 60 * 60
 _lock = threading.Lock()

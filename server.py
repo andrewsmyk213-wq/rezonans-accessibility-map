@@ -19,6 +19,7 @@ import urllib.parse
 import urllib.request
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 import osm
+import photos
 
 ROOT = pathlib.Path(__file__).resolve().parent
 API_KEY = os.environ.get('ORS_API_KEY', '').strip()
@@ -84,6 +85,15 @@ class Handler(SimpleHTTPRequestHandler):
                 'route_configured': bool(API_KEY),
                 'reports_enabled': bool(PENDING),
             })
+        if p == '/api/photo':
+            if not admitted('photo', self.client_address[0], 30):
+                return self.json_reply(429, {'error': 'Забагато запитів'})
+            params = urllib.parse.parse_qs(urllib.parse.urlsplit(self.path).query)
+            try:
+                result = photos.resolve(params.get('file', [''])[0], params.get('wikidata', [''])[0])
+                return self.json_reply(200, {'photo': result})
+            except (urllib.error.URLError, TimeoutError, OSError, ValueError, TypeError, KeyError, AttributeError):
+                return self.json_reply(200, {'photo': None})
         if p == '/api/osm':
             if not admitted('osm', self.client_address[0], 20):
                 return self.json_reply(429, {'error': 'Забагато запитів. Спробуйте пізніше.'})
