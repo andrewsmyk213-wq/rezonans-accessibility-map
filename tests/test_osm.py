@@ -61,15 +61,18 @@ class OSMTests(unittest.TestCase):
                 self.assertEqual(err.exception.code, 502)
             with self.assertRaises(HTTPError) as err: urlopen(base + '/osm.py')
             self.assertEqual(err.exception.code, 404)
-            req = Request(base + '/api/route', data=json.dumps({'profile':'wheelchair', 'start':[25.94,48.29], 'end':[25.95,48.30]}).encode(), headers={'Content-Type':'application/json'}, method='POST')
+            req = Request(base + '/api/route', data=json.dumps({'profile':'wheelchair', 'start':[25.94,48.29], 'end':[25.95,48.30], 'avoid_steps':True}).encode(), headers={'Content-Type':'application/json'}, method='POST')
             with patch.object(server, 'API_KEY', ''):
                 with self.assertRaises(HTTPError) as err: urlopen(req)
                 self.assertEqual(err.exception.code, 503)
             response = {'features':[{'geometry':{'type':'LineString','coordinates':[[25.94,48.29],[25.95,48.30]]}, 'properties':{'summary':{'distance':100,'duration':80}}}]}
-            with patch.object(server, 'API_KEY', 'test-only'), patch('server.urllib.request.urlopen', return_value=io.BytesIO(json.dumps(response).encode())):
+            with patch.object(server, 'API_KEY', 'test-only'), patch('server.urllib.request.urlopen', return_value=io.BytesIO(json.dumps(response).encode())) as upstream:
                 route = json.load(urlopen(req))
                 self.assertFalse(route['verified_accessibility'])
                 self.assertEqual(route['distance_m'], 100)
+                sent = json.loads(upstream.call_args.args[0].data)
+                self.assertEqual(sent['coordinates'], [[25.94,48.29],[25.95,48.30]])
+                self.assertEqual(sent['options']['avoid_features'], ['steps'])
         finally:
             http.shutdown()
             http.server_close()

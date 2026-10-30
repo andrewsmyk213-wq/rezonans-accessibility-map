@@ -29,7 +29,8 @@ PUBLIC = {
     '/', '/index.html', '/app.js', '/styles.css', '/sw.js',
     '/manifest.webmanifest', '/assets/favicon.svg',
     '/assets/app-icon-192.png', '/assets/app-icon-512.png',
-    '/data/places.geojson', '/data/sync_status.json', '/data/osm_snapshot.geojson',
+    '/data/places.geojson', '/data/sync_status.json', '/data/osm_snapshot.geojson', '/data/place_photos.json',
+    '/assets/place_photos/chernivtsi-station.jpg', '/assets/place_photos/chernivtsi-station-entrance.jpg', '/assets/place_photos/celan-monument.jpg', '/assets/place_photos/hakman-monument.jpg', '/assets/place_photos/franz-monument.jpg', '/assets/place_photos/trade-institute.jpg',
 }
 LOCK = threading.Lock()
 LIMITS = defaultdict(deque)
@@ -90,7 +91,10 @@ class Handler(SimpleHTTPRequestHandler):
                 return self.json_reply(429, {'error': 'Забагато запитів'})
             params = urllib.parse.parse_qs(urllib.parse.urlsplit(self.path).query)
             try:
-                result = photos.resolve(params.get('file', [''])[0], params.get('wikidata', [''])[0])
+                name = params.get('name', [''])[0]
+                lat = float(params['lat'][0]) if 'lat' in params else None
+                lon = float(params['lon'][0]) if 'lon' in params else None
+                result = photos.resolve(params.get('file', [''])[0], params.get('wikidata', [''])[0], name, lat, lon)
                 return self.json_reply(200, {'photo': result})
             except (urllib.error.URLError, TimeoutError, OSError, ValueError, TypeError, KeyError, AttributeError):
                 return self.json_reply(200, {'photo': None})
@@ -167,29 +171,43 @@ class Handler(SimpleHTTPRequestHandler):
             return self.json_reply(201, {'status': 'pending', 'message': 'Збережено на перевірку'})
         if body.get('profile') != 'wheelchair' or not all(isinstance(body.get(k), list) for k in ('start', 'end')):
             return self.json_reply(400, {'error': 'Некоректний профіль або точки маршруту'})
+        if type(body.get('avoid_steps', False)) is not bool:
+            return self.json_reply(400, {'error': 'Некоректний параметр уникнення сходів'})
         try:
             coords = [[float(x) for x in body[k]] for k in ('start', 'end')]
             if any(len(v) != 2 or not all(math.isfinite(x) for x in v) or not 25.7 <= v[0] <= 26.2 or not 48.15 <= v[1] <= 48.45 for v in coords):
                 raise ValueError()
         except (TypeError, ValueError):
             return self.json_reply(400, {'error': 'Некоректні координати'})
+        route_request = {'coordinates': coords}
+        if body.get('avoid_steps', False):
+            route_request['options'] = {'avoid_features': ['steps']}
         req = urllib.request.Request(
             'https://api.openrouteservice.org/v2/directions/wheelchair/geojson',
-            data=json.dumps({'coordinates': coords}).encode('utf-8'),
+            data=json.dumps(route_request).encode('utf-8'),
             headers={'Authorization': API_KEY, 'Content-Type': 'application/json',
                      'Accept': 'application/json', 'User-Agent': 'Rezonans-Pilot/2.1'},
             method='POST',
         )
         try:
             with urllib.request.urlopen(req, timeout=18) as response:
-                payload = json.load(response)
+                raw = response.read(2_000_001)
+            if len(raw) > 2_000_000:
+                raise ValueError('Відповідь маршрутизатора завелика')
+            payload = json.loads(raw)
             features = payload.get('features') or []
             if not features:
                 raise ValueError('Маршрут не знайдено')
             item = features[0]
             summary = item.get('properties', {}).get('summary', {})
+            geometry = item['geometry']
+            points = geometry.get('coordinates') if geometry.get('type') == 'LineString' else None
+            if not isinstance(points, list) or len(points) < 2 or any(not isinstance(point, list) or len(point) < 2 or any(type(v) not in (int, float) or not math.isfinite(v) for v in point[:2]) or not (25.7 <= point[0] <= 26.2 and 48.15 <= point[1] <= 48.45) for point in points):
+                raise ValueError('Некоректна геометрія маршруту')
+            if any(type(summary.get(k)) not in (int, float) or not math.isfinite(summary[k]) or summary[k] < 0 for k in ('distance', 'duration')):
+                raise ValueError('Некоректні дані маршруту')
             return self.json_reply(200, {
-                'geometry': item['geometry'],
+                'geometry': geometry,
                 'distance_m': summary.get('distance'),
                 'duration_s': summary.get('duration'),
                 'verified_accessibility': False,
@@ -197,7 +215,7 @@ class Handler(SimpleHTTPRequestHandler):
             })
         except urllib.error.HTTPError as ex:
             return self.json_reply(502, {'error': f'Маршрутний сервіс недоступний (HTTP {ex.code})'})
-        except (urllib.error.URLError, TimeoutError, ValueError, KeyError, OSError):
+        except (urllib.error.URLError, TimeoutError, ValueError, KeyError, OSError, TypeError, AttributeError):
             return self.json_reply(502, {'error': 'Не вдалося отримати маршрут від зовнішнього сервісу'})
 
 
