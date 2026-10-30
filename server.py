@@ -36,6 +36,34 @@ LOCK = threading.Lock()
 LIMITS = defaultdict(deque)
 
 
+def classify_route_error(exc):
+    """Classify bounded upstream errors without returning or logging their body."""
+    try:
+        raw = exc.read(8193)
+        if len(raw) > 8192:
+            raw = b''
+        detail = json.loads(raw) if raw else {}
+        error = detail.get('error', '') if isinstance(detail, dict) else ''
+        if isinstance(error, dict):
+            error = error.get('message', '')
+        message = error.casefold() if isinstance(error, str) else ''
+    except (OSError, ValueError, TypeError):
+        message = ''
+    if exc.code in (403, 429) and any(term in message for term in ('quota', 'rate limit', 'too many requests', 'request limit', 'daily limit')):
+        return 'quota', 'Ліміт запитів OpenRouteService вичерпано. Перевірте квоту та спробуйте пізніше.'
+    if exc.code == 429:
+        return 'rate_limit', 'Забагато запитів до OpenRouteService. Спробуйте пізніше.'
+    if exc.code == 401:
+        return 'authentication', 'OpenRouteService не прийняв облікові дані. Перевірте серверний ключ.'
+    if exc.code == 403:
+        return 'access_denied', 'OpenRouteService відмовив у доступі. Перевірте ключ, дозволи та денну квоту.'
+    if exc.code == 404:
+        return 'endpoint', 'Маршрутний endpoint або профіль OpenRouteService недоступний. Перевірте конфігурацію сервера.'
+    if exc.code in (400, 413, 422):
+        return 'request_rejected', 'OpenRouteService відхилив запит або обмеження маршруту. Спробуйте інші точки.'
+    return 'upstream_error', 'Маршрутний сервіс тимчасово недоступний. Спробуйте пізніше.'
+
+
 def admitted(category, ip, max_per_minute):
     now = time.monotonic()
     key = (category, ip)
@@ -183,7 +211,7 @@ class Handler(SimpleHTTPRequestHandler):
         if body.get('avoid_steps', False):
             route_request['options'] = {'avoid_features': ['steps']}
         req = urllib.request.Request(
-            'https://api.openrouteservice.org/v2/directions/wheelchair/geojson',
+            'https://api.heigit.org/openrouteservice/v2/directions/wheelchair/geojson',
             data=json.dumps(route_request).encode('utf-8'),
             headers={'Authorization': API_KEY, 'Content-Type': 'application/json',
                      'Accept': 'application/json', 'User-Agent': 'Rezonans-Pilot/2.1'},
@@ -214,7 +242,8 @@ class Handler(SimpleHTTPRequestHandler):
                 'source': 'OpenRouteService wheelchair profile',
             })
         except urllib.error.HTTPError as ex:
-            return self.json_reply(502, {'error': f'Маршрутний сервіс недоступний (HTTP {ex.code})'})
+            category, message = classify_route_error(ex)
+            return self.json_reply(502, {'error': message, 'code': category, 'upstream_status': ex.code})
         except (urllib.error.URLError, TimeoutError, ValueError, KeyError, OSError, TypeError, AttributeError):
             return self.json_reply(502, {'error': 'Не вдалося отримати маршрут від зовнішнього сервісу'})
 

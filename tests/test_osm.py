@@ -73,9 +73,27 @@ class OSMTests(unittest.TestCase):
                 sent = json.loads(upstream.call_args.args[0].data)
                 self.assertEqual(sent['coordinates'], [[25.94,48.29],[25.95,48.30]])
                 self.assertEqual(sent['options']['avoid_features'], ['steps'])
+                self.assertEqual(upstream.call_args.args[0].full_url, 'https://api.heigit.org/openrouteservice/v2/directions/wheelchair/geojson')
+                self.assertEqual(upstream.call_args.args[0].get_header('Authorization'), 'test-only')
         finally:
             http.shutdown()
             http.server_close()
             thread.join()
+
+    def test_upstream_error_categories_do_not_expose_response(self):
+        cases = [
+            (401, b'{"error":"invalid credentials secret-value"}', 'authentication'),
+            (403, b'{"error":"daily quota exceeded secret-value"}', 'quota'),
+            (403, b'{"error":"Invalid API key or access has been disallowed secret-value"}', 'access_denied'),
+            (429, b'{"error":"too many requests secret-value"}', 'quota'),
+            (404, b'{"error":"secret-value"}', 'endpoint'),
+            (400, b'{"error":"secret-value"}', 'request_rejected'),
+            (403, b'not-json secret-value', 'access_denied'),
+        ]
+        for status, body, expected in cases:
+            error = HTTPError('https://api.heigit.org', status, 'error', {}, io.BytesIO(body))
+            category, message = server.classify_route_error(error)
+            self.assertEqual(category, expected)
+            self.assertNotIn('secret-value', message)
 
 if __name__ == '__main__': unittest.main()
