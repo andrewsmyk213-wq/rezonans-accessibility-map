@@ -84,6 +84,8 @@ class OSMTests(unittest.TestCase):
         cases = [
             (401, b'{"error":"invalid credentials secret-value"}', 'authentication'),
             (403, b'{"error":"daily quota exceeded secret-value"}', 'quota'),
+            (403, b'{"error":"Invalid API key secret-value"}', 'invalid_credentials'),
+            (403, b'{"error":"Access to this API has been disallowed secret-value"}', 'service_restricted'),
             (403, b'{"error":"Invalid API key or access has been disallowed secret-value"}', 'access_denied'),
             (429, b'{"error":"too many requests secret-value"}', 'quota'),
             (404, b'{"error":"secret-value"}', 'endpoint'),

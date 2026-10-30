@@ -56,6 +56,12 @@ def classify_route_error(exc):
     if exc.code == 401:
         return 'authentication', 'OpenRouteService не прийняв облікові дані. Перевірте серверний ключ.'
     if exc.code == 403:
+        invalid_key = any(term in message for term in ('invalid api key', 'invalid key', 'invalid token'))
+        access_denied = any(term in message for term in ('access to this api has been disallowed', 'access has been disallowed', 'not authorized', 'not authorised', 'permission denied'))
+        if invalid_key and not access_denied:
+            return 'invalid_credentials', 'OpenRouteService повідомляє, що ключ недійсний. Перевірте ключ у Render.'
+        if access_denied and not invalid_key:
+            return 'service_restricted', 'OpenRouteService повідомляє про обмеження доступу до API. Перевірте дозволи ключа та обліковий запис.'
         return 'access_denied', 'OpenRouteService відмовив у доступі. Перевірте ключ, дозволи та денну квоту.'
     if exc.code == 404:
         return 'endpoint', 'Маршрутний endpoint або профіль OpenRouteService недоступний. Перевірте конфігурацію сервера.'
