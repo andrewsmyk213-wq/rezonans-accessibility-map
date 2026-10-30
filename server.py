@@ -28,7 +28,7 @@ PUBLIC = {
     '/', '/index.html', '/app.js', '/styles.css', '/sw.js',
     '/manifest.webmanifest', '/assets/favicon.svg',
     '/assets/app-icon-192.png', '/assets/app-icon-512.png',
-    '/data/places.geojson', '/data/sync_status.json',
+    '/data/places.geojson', '/data/sync_status.json', '/data/osm_snapshot.geojson',
 }
 LOCK = threading.Lock()
 LIMITS = defaultdict(deque)

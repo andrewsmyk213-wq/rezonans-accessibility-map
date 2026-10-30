@@ -4,7 +4,7 @@ import threading
 import unittest
 from unittest.mock import patch
 from urllib.error import URLError
-from urllib.request import urlopen
+from urllib.request import urlopen, Request
 from urllib.error import HTTPError
 from http.server import ThreadingHTTPServer
 import sys
@@ -28,7 +28,7 @@ class OSMTests(unittest.TestCase):
             {'type': 'node', 'id': 16, 'lat': 48.29, 'lon': 25.94, 'tags': {'name': 'Без тегів'}},
         ]}
         doc = osm.normalize(payload)
-        self.assertEqual(len(doc['features']), 2)
+        self.assertEqual(len(doc['features']), 3)
         place = doc['features'][0]
         self.assertEqual(place['geometry']['coordinates'], [25.94, 48.29])
         self.assertEqual(place['properties']['source_url'], 'https://www.openstreetmap.org/node/12')
@@ -40,7 +40,7 @@ class OSMTests(unittest.TestCase):
     def test_successful_cache_and_size_limit(self):
         class Response(io.BytesIO):
             pass
-        with patch('osm.urllib.request.urlopen', return_value=Response(b'{"elements":[]}')) as upstream:
+        with patch('osm.urllib.request.urlopen', return_value=Response(b'{"elements":[{"type":"node","id":1,"lat":48.29,"lon":25.94,"tags":{"name":"Test"}}]}')) as upstream:
             self.assertEqual(osm.get_osm(), osm.get_osm())
             self.assertEqual(upstream.call_count, 1)
         osm._cached = None
@@ -61,6 +61,15 @@ class OSMTests(unittest.TestCase):
                 self.assertEqual(err.exception.code, 502)
             with self.assertRaises(HTTPError) as err: urlopen(base + '/osm.py')
             self.assertEqual(err.exception.code, 404)
+            req = Request(base + '/api/route', data=json.dumps({'profile':'wheelchair', 'start':[25.94,48.29], 'end':[25.95,48.30]}).encode(), headers={'Content-Type':'application/json'}, method='POST')
+            with patch.object(server, 'API_KEY', ''):
+                with self.assertRaises(HTTPError) as err: urlopen(req)
+                self.assertEqual(err.exception.code, 503)
+            response = {'features':[{'geometry':{'type':'LineString','coordinates':[[25.94,48.29],[25.95,48.30]]}, 'properties':{'summary':{'distance':100,'duration':80}}}]}
+            with patch.object(server, 'API_KEY', 'test-only'), patch('server.urllib.request.urlopen', return_value=io.BytesIO(json.dumps(response).encode())):
+                route = json.load(urlopen(req))
+                self.assertFalse(route['verified_accessibility'])
+                self.assertEqual(route['distance_m'], 100)
         finally:
             http.shutdown()
             http.server_close()

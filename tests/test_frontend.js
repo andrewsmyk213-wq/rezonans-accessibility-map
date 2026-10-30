@@ -1,7 +1,7 @@
 const fs=require('fs'), vm=require('vm'), assert=require('assert');
-let script=fs.readFileSync('app.js','utf8').replace('init();\n})();','globalThis.testAPI={parseGeoJSON,statusFor,filtered,state};\n})();');
+let script=fs.readFileSync('app.js','utf8').replace('init();\n})();','globalThis.testAPI={parseGeoJSON,statusFor,suitability,filtered,state,demoPath};\n})();');
 const context={localStorage:{getItem:()=>null},URL,console}; vm.createContext(context); vm.runInContext(script,context);
-const {parseGeoJSON,statusFor,filtered,state}=context.testAPI;
+const {parseGeoJSON,statusFor,suitability,filtered,state,demoPath}=context.testAPI;
 const point=(id,name,props={})=>({type:'Feature',geometry:{type:'Point',coordinates:[25.94,48.29]},properties:{name,source_record_id:id,source_id:'openstreetmap',...props}});
 const places=parseGeoJSON({type:'FeatureCollection',features:[point('node/1','Лікарня',{wheelchair:'yes',address:'Головна 1',category:'hospital'}),point('node/2','Аптека',{wheelchair:'no',category:'pharmacy'}),point('node/3','Музей',{}),point('node/4','Конфлікт',{wheelchair:'yes',ramp:'no'})]}).places;
 assert.equal(places.length,4); assert.equal(parseGeoJSON({type:'FeatureCollection',features:[]}).places.length,0);
@@ -9,4 +9,6 @@ assert.equal(statusFor(places[0]).key,'good'); assert.equal(statusFor(places[1])
 state.current=places; state.search='головна'; assert.equal(filtered().length,1); assert.equal(filtered()[0].name,'Лікарня');
 state.search='';state.cat='health'; assert.equal(filtered().length,2);state.cat='all';state.accessFilter='unknown';assert.equal(filtered().length,1);
 state.accessFilter='all';state.needs.entrance=true;assert.equal(filtered()[0].name,'Лікарня');
+assert(suitability(places[1]).problem.includes('вхід'));state.needs.entrance=false;assert(!suitability(places[1]).problem.includes('вхід'));
+assert(demoPath(false).path.includes('Сходи'));assert(demoPath(true).path.includes('Обхід'));
 console.log('PASS: GeoJSON, empty dataset, source statuses, name/address search, categories, accessibility filtering and sorting');

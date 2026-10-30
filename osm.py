@@ -4,12 +4,13 @@ import json
 import math
 import threading
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 
-URL = 'https://overpass-api.de/api/interpreter'
+URLS = ('https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter', 'https://overpass.nchc.org.tw/api/interpreter')
 BOUNDS = (48.253, 25.860, 48.331, 26.012)
-QUERY = '[out:json][timeout:25];(nwr["wheelchair"]["name"](48.253,25.860,48.331,26.012);nwr["ramp"]["name"](48.253,25.860,48.331,26.012););out center tags;'
+QUERY = '[out:json][timeout:20];(nwr["name"]["wheelchair"](48.253,25.860,48.331,26.012);nwr["name"]["ramp"](48.253,25.860,48.331,26.012);nwr["name"]["amenity"~"^(pharmacy|hospital|clinic|doctors|townhall|community_centre|social_facility|library|school|university|cafe|restaurant)$"](48.253,25.860,48.331,26.012);nwr["name"]["shop"](48.253,25.860,48.331,26.012);nwr["name"]["office"](48.253,25.860,48.331,26.012);nwr["name"]["highway"="bus_stop"](48.253,25.860,48.331,26.012););out center tags;'
 MAX_BYTES = 4_000_000
 TTL = 4 * 60 * 60
 _lock = threading.Lock()
@@ -25,7 +26,7 @@ def normalize(payload):
         if not isinstance(item, dict):
             continue
         tags = item.get('tags')
-        if not isinstance(tags, dict) or not ('wheelchair' in tags or 'ramp' in tags):
+        if not isinstance(tags, dict):
             continue
         name = tags.get('name:uk') or tags.get('name')
         kind, identifier = item.get('type'), item.get('id')
@@ -57,11 +58,19 @@ def get_osm():
         if _cached is not None and time.monotonic() - _cached_at < TTL:
             return _cached
         data = urllib.parse.urlencode({'data': QUERY}).encode('utf-8')
-        request = urllib.request.Request(URL, data=data, headers={'User-Agent': 'Rezonans/2.2 (Chernivtsi accessibility map)', 'Accept': 'application/json'})
-        with urllib.request.urlopen(request, timeout=35) as response:
-            raw = response.read(MAX_BYTES + 1)
-        if len(raw) > MAX_BYTES:
-            raise ValueError('Overpass response too large')
-        result = normalize(json.loads(raw))
-        _cached, _cached_at = result, time.monotonic()
-        return result
+        last_error = None
+        for url in URLS:
+            try:
+                request = urllib.request.Request(url, data=data, headers={'User-Agent': 'Rezonans/2.3 (Chernivtsi accessibility map)', 'Accept': 'application/json'})
+                with urllib.request.urlopen(request, timeout=12) as response:
+                    raw = response.read(MAX_BYTES + 1)
+                if len(raw) > MAX_BYTES:
+                    raise ValueError('Overpass response too large')
+                result = normalize(json.loads(raw))
+                if not result['features']:
+                    raise ValueError('Overpass returned no places')
+                _cached, _cached_at = result, time.monotonic()
+                return result
+            except (urllib.error.URLError, TimeoutError, OSError, ValueError, TypeError) as exc:
+                last_error = exc
+        raise ValueError('Overpass unavailable') from last_error
