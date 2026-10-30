@@ -18,6 +18,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+import osm
 
 ROOT = pathlib.Path(__file__).resolve().parent
 API_KEY = os.environ.get('ORS_API_KEY', '').strip()
@@ -83,6 +84,13 @@ class Handler(SimpleHTTPRequestHandler):
                 'route_configured': bool(API_KEY),
                 'reports_enabled': bool(PENDING),
             })
+        if p == '/api/osm':
+            if not admitted('osm', self.client_address[0], 20):
+                return self.json_reply(429, {'error': 'Забагато запитів. Спробуйте пізніше.'})
+            try:
+                return self.json_reply(200, osm.get_osm())
+            except (urllib.error.URLError, TimeoutError, OSError, ValueError, TypeError):
+                return self.json_reply(502, {'error': 'OpenStreetMap тимчасово недоступний. Спробуйте ще раз пізніше.'})
         if p not in PUBLIC:
             return self.send_error(404, 'Not found')
         return super().do_GET()
