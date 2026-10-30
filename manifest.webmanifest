@@ -1,0 +1,23 @@
+{
+  "name": "Резонанс — Доступні Чернівці",
+  "short_name": "Резонанс",
+  "lang": "uk",
+  "description": "Карта доступності Чернівців на основі відкритих даних",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#142f45",
+  "icons": [
+    {
+      "src": "assets/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

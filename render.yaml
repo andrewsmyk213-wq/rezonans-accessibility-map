@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: rezonans-accessibility-map
+    runtime: python
+    region: frankfurt
+    plan: free
+    buildCommand: python3 -m compileall -q server.py scripts
+    startCommand: python3 server.py --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit

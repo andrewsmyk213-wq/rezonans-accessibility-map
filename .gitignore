@@ -218,3 +218,20 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Rezonans runtime data
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+.DS_Store
+.venv/
+*.log
+*.db
+*.sqlite3
+.Dockerfile.swp
+scripts/output/
+scripts/raw/
+data/reports_pending.jsonl
+tests/__pycache__/
