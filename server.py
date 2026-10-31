@@ -48,7 +48,7 @@ def classify_route_error(exc):
             error = error.get('message', '')
         message = error.casefold() if isinstance(error, str) else ''
     except (OSError, ValueError, TypeError):
-        message = ''
+        message = raw.decode('utf-8', errors='replace').casefold() if 'raw' in locals() else ''
     if exc.code in (403, 429) and any(term in message for term in ('quota', 'rate limit', 'too many requests', 'request limit', 'daily limit')):
         return 'quota', 'Ліміт запитів OpenRouteService вичерпано. Перевірте квоту та спробуйте пізніше.'
     if exc.code == 429:
@@ -65,6 +65,10 @@ def classify_route_error(exc):
         return 'access_denied', 'OpenRouteService відмовив у доступі. Перевірте ключ, дозволи та денну квоту.'
     if exc.code == 404:
         return 'endpoint', 'Маршрутний endpoint або профіль OpenRouteService недоступний. Перевірте конфігурацію сервера.'
+    if exc.code == 406 and any(term in message for term in ('mod_security','security policy','blocked','firewall')):
+        return 'provider_filter', 'Провайдер відхилив запит за політикою безпеки (HTTP 406). Скористайтесь зовнішнім планувальником.'
+    if exc.code == 406:
+        return 'not_acceptable', 'Провайдер маршруту відхилив запит (HTTP 406). Причину не підтверджено; це не доводить помилку ключа. Скористайтесь зовнішнім планувальником.'
     if exc.code in (400, 413, 422):
         return 'request_rejected', 'OpenRouteService відхилив запит або обмеження маршруту. Спробуйте інші точки.'
     return 'upstream_error', 'Маршрутний сервіс тимчасово недоступний. Спробуйте пізніше.'
@@ -248,8 +252,10 @@ class Handler(SimpleHTTPRequestHandler):
                 'source': 'OpenRouteService wheelchair profile',
             })
         except urllib.error.HTTPError as ex:
+            media_type = str(ex.headers.get('Content-Type', '') if ex.headers else '').lower()
+            response_kind = 'json' if 'json' in media_type else 'html' if 'html' in media_type else 'unknown'
             category, message = classify_route_error(ex)
-            return self.json_reply(502, {'error': message, 'code': category, 'upstream_status': ex.code})
+            return self.json_reply(502, {'error': message, 'code': category, 'upstream_status': ex.code, 'upstream_response_kind': response_kind})
         except (urllib.error.URLError, TimeoutError, ValueError, KeyError, OSError, TypeError, AttributeError):
             return self.json_reply(502, {'error': 'Не вдалося отримати маршрут від зовнішнього сервісу'})
 

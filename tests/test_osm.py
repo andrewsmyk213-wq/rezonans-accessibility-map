@@ -90,6 +90,7 @@ class OSMTests(unittest.TestCase):
             (429, b'{"error":"too many requests secret-value"}', 'quota'),
             (404, b'{"error":"secret-value"}', 'endpoint'),
             (400, b'{"error":"secret-value"}', 'request_rejected'),
+            (406, b'{"error":"Not acceptable secret-value"}', 'not_acceptable'),
             (403, b'not-json secret-value', 'access_denied'),
         ]
         for status, body, expected in cases:
