@@ -1,0 +1,1954 @@
+{
+  "before": {
+    "total_places": 157,
+    "known_attributes": {
+      "wheelchair": 157,
+      "entrance": 0,
+      "ramp": 0,
+      "stairs": 0,
+      "elevator": 0,
+      "toilet": 0
+    },
+    "places_with_curated_photos": 5,
+    "curated_photo_assets": 6,
+    "records_missing_any_attribute": 157,
+    "records_missing_all_attributes": 0,
+    "sources": {
+      "openstreetmap": 157
+    },
+    "dataset_dates": {
+      "2026-10-30T14:02:51Z": 157
+    },
+    "physical_observation_dates": {
+      "unknown": 157
+    },
+    "attribute_evidence": {
+      "wheelchair": [
+        {
+          "record": "node/255367661",
+          "source_url": "https://www.openstreetmap.org/node/255367661",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/347289185",
+          "source_url": "https://www.openstreetmap.org/node/347289185",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/361137119",
+          "source_url": "https://www.openstreetmap.org/node/361137119",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/371845804",
+          "source_url": "https://www.openstreetmap.org/node/371845804",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/439884366",
+          "source_url": "https://www.openstreetmap.org/node/439884366",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/439884429",
+          "source_url": "https://www.openstreetmap.org/node/439884429",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/442749054",
+          "source_url": "https://www.openstreetmap.org/node/442749054",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/692070245",
+          "source_url": "https://www.openstreetmap.org/node/692070245",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/896158985",
+          "source_url": "https://www.openstreetmap.org/node/896158985",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/904553411",
+          "source_url": "https://www.openstreetmap.org/node/904553411",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/904553779",
+          "source_url": "https://www.openstreetmap.org/node/904553779",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/904553994",
+          "source_url": "https://www.openstreetmap.org/node/904553994",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/988300458",
+          "source_url": "https://www.openstreetmap.org/node/988300458",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1002926899",
+          "source_url": "https://www.openstreetmap.org/node/1002926899",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1006070273",
+          "source_url": "https://www.openstreetmap.org/node/1006070273",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1019299969",
+          "source_url": "https://www.openstreetmap.org/node/1019299969",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1038122161",
+          "source_url": "https://www.openstreetmap.org/node/1038122161",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1039277035",
+          "source_url": "https://www.openstreetmap.org/node/1039277035",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1039285298",
+          "source_url": "https://www.openstreetmap.org/node/1039285298",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1175438010",
+          "source_url": "https://www.openstreetmap.org/node/1175438010",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1175443624",
+          "source_url": "https://www.openstreetmap.org/node/1175443624",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1176817341",
+          "source_url": "https://www.openstreetmap.org/node/1176817341",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1177070297",
+          "source_url": "https://www.openstreetmap.org/node/1177070297",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1177119674",
+          "source_url": "https://www.openstreetmap.org/node/1177119674",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1177303138",
+          "source_url": "https://www.openstreetmap.org/node/1177303138",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1177305701",
+          "source_url": "https://www.openstreetmap.org/node/1177305701",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1177719137",
+          "source_url": "https://www.openstreetmap.org/node/1177719137",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1182551452",
+          "source_url": "https://www.openstreetmap.org/node/1182551452",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1182551454",
+          "source_url": "https://www.openstreetmap.org/node/1182551454",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1182551471",
+          "source_url": "https://www.openstreetmap.org/node/1182551471",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1185932612",
+          "source_url": "https://www.openstreetmap.org/node/1185932612",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1213926578",
+          "source_url": "https://www.openstreetmap.org/node/1213926578",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1214440870",
+          "source_url": "https://www.openstreetmap.org/node/1214440870",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1214440871",
+          "source_url": "https://www.openstreetmap.org/node/1214440871",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1214440898",
+          "source_url": "https://www.openstreetmap.org/node/1214440898",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1282053797",
+          "source_url": "https://www.openstreetmap.org/node/1282053797",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1363439778",
+          "source_url": "https://www.openstreetmap.org/node/1363439778",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/1375177847",
+          "source_url": "https://www.openstreetmap.org/node/1375177847",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1375177850",
+          "source_url": "https://www.openstreetmap.org/node/1375177850",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/1375177855",
+          "source_url": "https://www.openstreetmap.org/node/1375177855",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1375177860",
+          "source_url": "https://www.openstreetmap.org/node/1375177860",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1375177873",
+          "source_url": "https://www.openstreetmap.org/node/1375177873",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1375360658",
+          "source_url": "https://www.openstreetmap.org/node/1375360658",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1375360669",
+          "source_url": "https://www.openstreetmap.org/node/1375360669",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1400237296",
+          "source_url": "https://www.openstreetmap.org/node/1400237296",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1400237303",
+          "source_url": "https://www.openstreetmap.org/node/1400237303",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1400237322",
+          "source_url": "https://www.openstreetmap.org/node/1400237322",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1428319473",
+          "source_url": "https://www.openstreetmap.org/node/1428319473",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/1430947878",
+          "source_url": "https://www.openstreetmap.org/node/1430947878",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1446291177",
+          "source_url": "https://www.openstreetmap.org/node/1446291177",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1465021005",
+          "source_url": "https://www.openstreetmap.org/node/1465021005",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1465021013",
+          "source_url": "https://www.openstreetmap.org/node/1465021013",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1465021015",
+          "source_url": "https://www.openstreetmap.org/node/1465021015",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1609510457",
+          "source_url": "https://www.openstreetmap.org/node/1609510457",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1647676920",
+          "source_url": "https://www.openstreetmap.org/node/1647676920",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1647677644",
+          "source_url": "https://www.openstreetmap.org/node/1647677644",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1761863796",
+          "source_url": "https://www.openstreetmap.org/node/1761863796",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1768692797",
+          "source_url": "https://www.openstreetmap.org/node/1768692797",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1768692799",
+          "source_url": "https://www.openstreetmap.org/node/1768692799",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1768692802",
+          "source_url": "https://www.openstreetmap.org/node/1768692802",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1768692813",
+          "source_url": "https://www.openstreetmap.org/node/1768692813",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1792287398",
+          "source_url": "https://www.openstreetmap.org/node/1792287398",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1792287400",
+          "source_url": "https://www.openstreetmap.org/node/1792287400",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1806054085",
+          "source_url": "https://www.openstreetmap.org/node/1806054085",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/1862179144",
+          "source_url": "https://www.openstreetmap.org/node/1862179144",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1862179145",
+          "source_url": "https://www.openstreetmap.org/node/1862179145",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1911574210",
+          "source_url": "https://www.openstreetmap.org/node/1911574210",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/2032865026",
+          "source_url": "https://www.openstreetmap.org/node/2032865026",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/2069189624",
+          "source_url": "https://www.openstreetmap.org/node/2069189624",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/2084664138",
+          "source_url": "https://www.openstreetmap.org/node/2084664138",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/2109096477",
+          "source_url": "https://www.openstreetmap.org/node/2109096477",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/2119882207",
+          "source_url": "https://www.openstreetmap.org/node/2119882207",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/2125232461",
+          "source_url": "https://www.openstreetmap.org/node/2125232461",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/2128585385",
+          "source_url": "https://www.openstreetmap.org/node/2128585385",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/2242145097",
+          "source_url": "https://www.openstreetmap.org/node/2242145097",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/2261299011",
+          "source_url": "https://www.openstreetmap.org/node/2261299011",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/2512730001",
+          "source_url": "https://www.openstreetmap.org/node/2512730001",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/2512730002",
+          "source_url": "https://www.openstreetmap.org/node/2512730002",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/2512730005",
+          "source_url": "https://www.openstreetmap.org/node/2512730005",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/2512730009",
+          "source_url": "https://www.openstreetmap.org/node/2512730009",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/2612678400",
+          "source_url": "https://www.openstreetmap.org/node/2612678400",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/2847326868",
+          "source_url": "https://www.openstreetmap.org/node/2847326868",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/2847326869",
+          "source_url": "https://www.openstreetmap.org/node/2847326869",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/3152747828",
+          "source_url": "https://www.openstreetmap.org/node/3152747828",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/3414057689",
+          "source_url": "https://www.openstreetmap.org/node/3414057689",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/3414057690",
+          "source_url": "https://www.openstreetmap.org/node/3414057690",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/3668268414",
+          "source_url": "https://www.openstreetmap.org/node/3668268414",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/3868197227",
+          "source_url": "https://www.openstreetmap.org/node/3868197227",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/3900438686",
+          "source_url": "https://www.openstreetmap.org/node/3900438686",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/3958366166",
+          "source_url": "https://www.openstreetmap.org/node/3958366166",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/3958366168",
+          "source_url": "https://www.openstreetmap.org/node/3958366168",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/4000796357",
+          "source_url": "https://www.openstreetmap.org/node/4000796357",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/4137133505",
+          "source_url": "https://www.openstreetmap.org/node/4137133505",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/4247232237",
+          "source_url": "https://www.openstreetmap.org/node/4247232237",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/4277826892",
+          "source_url": "https://www.openstreetmap.org/node/4277826892",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/4404849193",
+          "source_url": "https://www.openstreetmap.org/node/4404849193",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/4550935269",
+          "source_url": "https://www.openstreetmap.org/node/4550935269",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/4605487826",
+          "source_url": "https://www.openstreetmap.org/node/4605487826",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/4625596247",
+          "source_url": "https://www.openstreetmap.org/node/4625596247",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/5173812304",
+          "source_url": "https://www.openstreetmap.org/node/5173812304",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/5236178725",
+          "source_url": "https://www.openstreetmap.org/node/5236178725",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5286026424",
+          "source_url": "https://www.openstreetmap.org/node/5286026424",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/5308398836",
+          "source_url": "https://www.openstreetmap.org/node/5308398836",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5308398843",
+          "source_url": "https://www.openstreetmap.org/node/5308398843",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/5308398847",
+          "source_url": "https://www.openstreetmap.org/node/5308398847",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5309064726",
+          "source_url": "https://www.openstreetmap.org/node/5309064726",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5310414951",
+          "source_url": "https://www.openstreetmap.org/node/5310414951",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5310414953",
+          "source_url": "https://www.openstreetmap.org/node/5310414953",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5310414960",
+          "source_url": "https://www.openstreetmap.org/node/5310414960",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/5310414962",
+          "source_url": "https://www.openstreetmap.org/node/5310414962",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5310414970",
+          "source_url": "https://www.openstreetmap.org/node/5310414970",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5310414971",
+          "source_url": "https://www.openstreetmap.org/node/5310414971",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/5316404807",
+          "source_url": "https://www.openstreetmap.org/node/5316404807",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/5316404808",
+          "source_url": "https://www.openstreetmap.org/node/5316404808",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/5316404810",
+          "source_url": "https://www.openstreetmap.org/node/5316404810",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/5316479998",
+          "source_url": "https://www.openstreetmap.org/node/5316479998",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5316480002",
+          "source_url": "https://www.openstreetmap.org/node/5316480002",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5316480009",
+          "source_url": "https://www.openstreetmap.org/node/5316480009",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/5316480010",
+          "source_url": "https://www.openstreetmap.org/node/5316480010",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/5316480011",
+          "source_url": "https://www.openstreetmap.org/node/5316480011",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/5316480013",
+          "source_url": "https://www.openstreetmap.org/node/5316480013",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5316480016",
+          "source_url": "https://www.openstreetmap.org/node/5316480016",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5317002793",
+          "source_url": "https://www.openstreetmap.org/node/5317002793",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5317002795",
+          "source_url": "https://www.openstreetmap.org/node/5317002795",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5317002796",
+          "source_url": "https://www.openstreetmap.org/node/5317002796",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5317002797",
+          "source_url": "https://www.openstreetmap.org/node/5317002797",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5317002798",
+          "source_url": "https://www.openstreetmap.org/node/5317002798",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5317002802",
+          "source_url": "https://www.openstreetmap.org/node/5317002802",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5317002803",
+          "source_url": "https://www.openstreetmap.org/node/5317002803",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5317012376",
+          "source_url": "https://www.openstreetmap.org/node/5317012376",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5318313076",
+          "source_url": "https://www.openstreetmap.org/node/5318313076",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/5320264919",
+          "source_url": "https://www.openstreetmap.org/node/5320264919",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/5320264920",
+          "source_url": "https://www.openstreetmap.org/node/5320264920",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5320265021",
+          "source_url": "https://www.openstreetmap.org/node/5320265021",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5320265024",
+          "source_url": "https://www.openstreetmap.org/node/5320265024",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5320265029",
+          "source_url": "https://www.openstreetmap.org/node/5320265029",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/5320265031",
+          "source_url": "https://www.openstreetmap.org/node/5320265031",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5320265033",
+          "source_url": "https://www.openstreetmap.org/node/5320265033",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/5320265037",
+          "source_url": "https://www.openstreetmap.org/node/5320265037",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/5322745336",
+          "source_url": "https://www.openstreetmap.org/node/5322745336",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5325622566",
+          "source_url": "https://www.openstreetmap.org/node/5325622566",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5647439059",
+          "source_url": "https://www.openstreetmap.org/node/5647439059",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/6397790506",
+          "source_url": "https://www.openstreetmap.org/node/6397790506",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/6432149733",
+          "source_url": "https://www.openstreetmap.org/node/6432149733",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/8150742864",
+          "source_url": "https://www.openstreetmap.org/node/8150742864",
+          "observed_at": null,
+          "value": "designated"
+        },
+        {
+          "record": "node/8754364744",
+          "source_url": "https://www.openstreetmap.org/node/8754364744",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/9461418532",
+          "source_url": "https://www.openstreetmap.org/node/9461418532",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/9872023524",
+          "source_url": "https://www.openstreetmap.org/node/9872023524",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/10870262651",
+          "source_url": "https://www.openstreetmap.org/node/10870262651",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/11417134867",
+          "source_url": "https://www.openstreetmap.org/node/11417134867",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/13267029382",
+          "source_url": "https://www.openstreetmap.org/node/13267029382",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/13635094613",
+          "source_url": "https://www.openstreetmap.org/node/13635094613",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/13635137644",
+          "source_url": "https://www.openstreetmap.org/node/13635137644",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/13635137645",
+          "source_url": "https://www.openstreetmap.org/node/13635137645",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/13635139264",
+          "source_url": "https://www.openstreetmap.org/node/13635139264",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/14028767360",
+          "source_url": "https://www.openstreetmap.org/node/14028767360",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/14200887813",
+          "source_url": "https://www.openstreetmap.org/node/14200887813",
+          "observed_at": null,
+          "value": "limited"
+        }
+      ],
+      "entrance": [],
+      "ramp": [],
+      "stairs": [],
+      "elevator": [],
+      "toilet": []
+    }
+  },
+  "after": {
+    "total_places": 157,
+    "known_attributes": {
+      "wheelchair": 157,
+      "entrance": 0,
+      "ramp": 0,
+      "stairs": 0,
+      "elevator": 0,
+      "toilet": 0
+    },
+    "places_with_curated_photos": 5,
+    "curated_photo_assets": 6,
+    "records_missing_any_attribute": 157,
+    "records_missing_all_attributes": 0,
+    "sources": {
+      "openstreetmap": 157
+    },
+    "dataset_dates": {
+      "2026-10-30T14:02:51Z": 157
+    },
+    "physical_observation_dates": {
+      "unknown": 157
+    },
+    "attribute_evidence": {
+      "wheelchair": [
+        {
+          "record": "node/255367661",
+          "source_url": "https://www.openstreetmap.org/node/255367661",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/347289185",
+          "source_url": "https://www.openstreetmap.org/node/347289185",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/361137119",
+          "source_url": "https://www.openstreetmap.org/node/361137119",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/371845804",
+          "source_url": "https://www.openstreetmap.org/node/371845804",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/439884366",
+          "source_url": "https://www.openstreetmap.org/node/439884366",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/439884429",
+          "source_url": "https://www.openstreetmap.org/node/439884429",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/442749054",
+          "source_url": "https://www.openstreetmap.org/node/442749054",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/692070245",
+          "source_url": "https://www.openstreetmap.org/node/692070245",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/896158985",
+          "source_url": "https://www.openstreetmap.org/node/896158985",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/904553411",
+          "source_url": "https://www.openstreetmap.org/node/904553411",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/904553779",
+          "source_url": "https://www.openstreetmap.org/node/904553779",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/904553994",
+          "source_url": "https://www.openstreetmap.org/node/904553994",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/988300458",
+          "source_url": "https://www.openstreetmap.org/node/988300458",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1002926899",
+          "source_url": "https://www.openstreetmap.org/node/1002926899",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1006070273",
+          "source_url": "https://www.openstreetmap.org/node/1006070273",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1019299969",
+          "source_url": "https://www.openstreetmap.org/node/1019299969",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1038122161",
+          "source_url": "https://www.openstreetmap.org/node/1038122161",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1039277035",
+          "source_url": "https://www.openstreetmap.org/node/1039277035",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1039285298",
+          "source_url": "https://www.openstreetmap.org/node/1039285298",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1175438010",
+          "source_url": "https://www.openstreetmap.org/node/1175438010",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1175443624",
+          "source_url": "https://www.openstreetmap.org/node/1175443624",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1176817341",
+          "source_url": "https://www.openstreetmap.org/node/1176817341",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1177070297",
+          "source_url": "https://www.openstreetmap.org/node/1177070297",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1177119674",
+          "source_url": "https://www.openstreetmap.org/node/1177119674",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1177303138",
+          "source_url": "https://www.openstreetmap.org/node/1177303138",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1177305701",
+          "source_url": "https://www.openstreetmap.org/node/1177305701",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1177719137",
+          "source_url": "https://www.openstreetmap.org/node/1177719137",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1182551452",
+          "source_url": "https://www.openstreetmap.org/node/1182551452",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1182551454",
+          "source_url": "https://www.openstreetmap.org/node/1182551454",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1182551471",
+          "source_url": "https://www.openstreetmap.org/node/1182551471",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1185932612",
+          "source_url": "https://www.openstreetmap.org/node/1185932612",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1213926578",
+          "source_url": "https://www.openstreetmap.org/node/1213926578",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1214440870",
+          "source_url": "https://www.openstreetmap.org/node/1214440870",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1214440871",
+          "source_url": "https://www.openstreetmap.org/node/1214440871",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1214440898",
+          "source_url": "https://www.openstreetmap.org/node/1214440898",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1282053797",
+          "source_url": "https://www.openstreetmap.org/node/1282053797",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1363439778",
+          "source_url": "https://www.openstreetmap.org/node/1363439778",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/1375177847",
+          "source_url": "https://www.openstreetmap.org/node/1375177847",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1375177850",
+          "source_url": "https://www.openstreetmap.org/node/1375177850",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/1375177855",
+          "source_url": "https://www.openstreetmap.org/node/1375177855",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1375177860",
+          "source_url": "https://www.openstreetmap.org/node/1375177860",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1375177873",
+          "source_url": "https://www.openstreetmap.org/node/1375177873",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1375360658",
+          "source_url": "https://www.openstreetmap.org/node/1375360658",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1375360669",
+          "source_url": "https://www.openstreetmap.org/node/1375360669",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1400237296",
+          "source_url": "https://www.openstreetmap.org/node/1400237296",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1400237303",
+          "source_url": "https://www.openstreetmap.org/node/1400237303",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1400237322",
+          "source_url": "https://www.openstreetmap.org/node/1400237322",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1428319473",
+          "source_url": "https://www.openstreetmap.org/node/1428319473",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/1430947878",
+          "source_url": "https://www.openstreetmap.org/node/1430947878",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1446291177",
+          "source_url": "https://www.openstreetmap.org/node/1446291177",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1465021005",
+          "source_url": "https://www.openstreetmap.org/node/1465021005",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1465021013",
+          "source_url": "https://www.openstreetmap.org/node/1465021013",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1465021015",
+          "source_url": "https://www.openstreetmap.org/node/1465021015",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1609510457",
+          "source_url": "https://www.openstreetmap.org/node/1609510457",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1647676920",
+          "source_url": "https://www.openstreetmap.org/node/1647676920",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1647677644",
+          "source_url": "https://www.openstreetmap.org/node/1647677644",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/1761863796",
+          "source_url": "https://www.openstreetmap.org/node/1761863796",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1768692797",
+          "source_url": "https://www.openstreetmap.org/node/1768692797",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1768692799",
+          "source_url": "https://www.openstreetmap.org/node/1768692799",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1768692802",
+          "source_url": "https://www.openstreetmap.org/node/1768692802",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1768692813",
+          "source_url": "https://www.openstreetmap.org/node/1768692813",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1792287398",
+          "source_url": "https://www.openstreetmap.org/node/1792287398",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1792287400",
+          "source_url": "https://www.openstreetmap.org/node/1792287400",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1806054085",
+          "source_url": "https://www.openstreetmap.org/node/1806054085",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/1862179144",
+          "source_url": "https://www.openstreetmap.org/node/1862179144",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1862179145",
+          "source_url": "https://www.openstreetmap.org/node/1862179145",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/1911574210",
+          "source_url": "https://www.openstreetmap.org/node/1911574210",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/2032865026",
+          "source_url": "https://www.openstreetmap.org/node/2032865026",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/2069189624",
+          "source_url": "https://www.openstreetmap.org/node/2069189624",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/2084664138",
+          "source_url": "https://www.openstreetmap.org/node/2084664138",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/2109096477",
+          "source_url": "https://www.openstreetmap.org/node/2109096477",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/2119882207",
+          "source_url": "https://www.openstreetmap.org/node/2119882207",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/2125232461",
+          "source_url": "https://www.openstreetmap.org/node/2125232461",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/2128585385",
+          "source_url": "https://www.openstreetmap.org/node/2128585385",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/2242145097",
+          "source_url": "https://www.openstreetmap.org/node/2242145097",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/2261299011",
+          "source_url": "https://www.openstreetmap.org/node/2261299011",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/2512730001",
+          "source_url": "https://www.openstreetmap.org/node/2512730001",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/2512730002",
+          "source_url": "https://www.openstreetmap.org/node/2512730002",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/2512730005",
+          "source_url": "https://www.openstreetmap.org/node/2512730005",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/2512730009",
+          "source_url": "https://www.openstreetmap.org/node/2512730009",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/2612678400",
+          "source_url": "https://www.openstreetmap.org/node/2612678400",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/2847326868",
+          "source_url": "https://www.openstreetmap.org/node/2847326868",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/2847326869",
+          "source_url": "https://www.openstreetmap.org/node/2847326869",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/3152747828",
+          "source_url": "https://www.openstreetmap.org/node/3152747828",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/3414057689",
+          "source_url": "https://www.openstreetmap.org/node/3414057689",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/3414057690",
+          "source_url": "https://www.openstreetmap.org/node/3414057690",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/3668268414",
+          "source_url": "https://www.openstreetmap.org/node/3668268414",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/3868197227",
+          "source_url": "https://www.openstreetmap.org/node/3868197227",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/3900438686",
+          "source_url": "https://www.openstreetmap.org/node/3900438686",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/3958366166",
+          "source_url": "https://www.openstreetmap.org/node/3958366166",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/3958366168",
+          "source_url": "https://www.openstreetmap.org/node/3958366168",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/4000796357",
+          "source_url": "https://www.openstreetmap.org/node/4000796357",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/4137133505",
+          "source_url": "https://www.openstreetmap.org/node/4137133505",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/4247232237",
+          "source_url": "https://www.openstreetmap.org/node/4247232237",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/4277826892",
+          "source_url": "https://www.openstreetmap.org/node/4277826892",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/4404849193",
+          "source_url": "https://www.openstreetmap.org/node/4404849193",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/4550935269",
+          "source_url": "https://www.openstreetmap.org/node/4550935269",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/4605487826",
+          "source_url": "https://www.openstreetmap.org/node/4605487826",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/4625596247",
+          "source_url": "https://www.openstreetmap.org/node/4625596247",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/5173812304",
+          "source_url": "https://www.openstreetmap.org/node/5173812304",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/5236178725",
+          "source_url": "https://www.openstreetmap.org/node/5236178725",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5286026424",
+          "source_url": "https://www.openstreetmap.org/node/5286026424",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/5308398836",
+          "source_url": "https://www.openstreetmap.org/node/5308398836",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5308398843",
+          "source_url": "https://www.openstreetmap.org/node/5308398843",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/5308398847",
+          "source_url": "https://www.openstreetmap.org/node/5308398847",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5309064726",
+          "source_url": "https://www.openstreetmap.org/node/5309064726",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5310414951",
+          "source_url": "https://www.openstreetmap.org/node/5310414951",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5310414953",
+          "source_url": "https://www.openstreetmap.org/node/5310414953",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5310414960",
+          "source_url": "https://www.openstreetmap.org/node/5310414960",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/5310414962",
+          "source_url": "https://www.openstreetmap.org/node/5310414962",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5310414970",
+          "source_url": "https://www.openstreetmap.org/node/5310414970",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5310414971",
+          "source_url": "https://www.openstreetmap.org/node/5310414971",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/5316404807",
+          "source_url": "https://www.openstreetmap.org/node/5316404807",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/5316404808",
+          "source_url": "https://www.openstreetmap.org/node/5316404808",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/5316404810",
+          "source_url": "https://www.openstreetmap.org/node/5316404810",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/5316479998",
+          "source_url": "https://www.openstreetmap.org/node/5316479998",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5316480002",
+          "source_url": "https://www.openstreetmap.org/node/5316480002",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5316480009",
+          "source_url": "https://www.openstreetmap.org/node/5316480009",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/5316480010",
+          "source_url": "https://www.openstreetmap.org/node/5316480010",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/5316480011",
+          "source_url": "https://www.openstreetmap.org/node/5316480011",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/5316480013",
+          "source_url": "https://www.openstreetmap.org/node/5316480013",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5316480016",
+          "source_url": "https://www.openstreetmap.org/node/5316480016",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5317002793",
+          "source_url": "https://www.openstreetmap.org/node/5317002793",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5317002795",
+          "source_url": "https://www.openstreetmap.org/node/5317002795",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5317002796",
+          "source_url": "https://www.openstreetmap.org/node/5317002796",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5317002797",
+          "source_url": "https://www.openstreetmap.org/node/5317002797",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5317002798",
+          "source_url": "https://www.openstreetmap.org/node/5317002798",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5317002802",
+          "source_url": "https://www.openstreetmap.org/node/5317002802",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5317002803",
+          "source_url": "https://www.openstreetmap.org/node/5317002803",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5317012376",
+          "source_url": "https://www.openstreetmap.org/node/5317012376",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5318313076",
+          "source_url": "https://www.openstreetmap.org/node/5318313076",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/5320264919",
+          "source_url": "https://www.openstreetmap.org/node/5320264919",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/5320264920",
+          "source_url": "https://www.openstreetmap.org/node/5320264920",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5320265021",
+          "source_url": "https://www.openstreetmap.org/node/5320265021",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5320265024",
+          "source_url": "https://www.openstreetmap.org/node/5320265024",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5320265029",
+          "source_url": "https://www.openstreetmap.org/node/5320265029",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/5320265031",
+          "source_url": "https://www.openstreetmap.org/node/5320265031",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5320265033",
+          "source_url": "https://www.openstreetmap.org/node/5320265033",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/5320265037",
+          "source_url": "https://www.openstreetmap.org/node/5320265037",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/5322745336",
+          "source_url": "https://www.openstreetmap.org/node/5322745336",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5325622566",
+          "source_url": "https://www.openstreetmap.org/node/5325622566",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/5647439059",
+          "source_url": "https://www.openstreetmap.org/node/5647439059",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/6397790506",
+          "source_url": "https://www.openstreetmap.org/node/6397790506",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/6432149733",
+          "source_url": "https://www.openstreetmap.org/node/6432149733",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/8150742864",
+          "source_url": "https://www.openstreetmap.org/node/8150742864",
+          "observed_at": null,
+          "value": "designated"
+        },
+        {
+          "record": "node/8754364744",
+          "source_url": "https://www.openstreetmap.org/node/8754364744",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/9461418532",
+          "source_url": "https://www.openstreetmap.org/node/9461418532",
+          "observed_at": null,
+          "value": "limited"
+        },
+        {
+          "record": "node/9872023524",
+          "source_url": "https://www.openstreetmap.org/node/9872023524",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/10870262651",
+          "source_url": "https://www.openstreetmap.org/node/10870262651",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/11417134867",
+          "source_url": "https://www.openstreetmap.org/node/11417134867",
+          "observed_at": null,
+          "value": "no"
+        },
+        {
+          "record": "node/13267029382",
+          "source_url": "https://www.openstreetmap.org/node/13267029382",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/13635094613",
+          "source_url": "https://www.openstreetmap.org/node/13635094613",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/13635137644",
+          "source_url": "https://www.openstreetmap.org/node/13635137644",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/13635137645",
+          "source_url": "https://www.openstreetmap.org/node/13635137645",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/13635139264",
+          "source_url": "https://www.openstreetmap.org/node/13635139264",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/14028767360",
+          "source_url": "https://www.openstreetmap.org/node/14028767360",
+          "observed_at": null,
+          "value": "yes"
+        },
+        {
+          "record": "node/14200887813",
+          "source_url": "https://www.openstreetmap.org/node/14200887813",
+          "observed_at": null,
+          "value": "limited"
+        }
+      ],
+      "entrance": [],
+      "ramp": [],
+      "stairs": [],
+      "elevator": [],
+      "toilet": []
+    }
+  },
+  "additional_datasets_imported": [],
+  "note": "Unknowns remain unknown. Source snapshot dates are not physical observation dates. No automatic matching by distance."
+}
